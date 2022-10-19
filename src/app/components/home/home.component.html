@@ -1,0 +1,23 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-6 pl-4">
+      Welcome {{ username }}
+    </div>
+    <button class="col-6 text-right" style="cursor: pointer;" (click)="logOut()">
+      Logout
+    </button>
+  </div>
+
+  <ul class="list-group" *ngFor="let sessionchat of sessionchats">
+    <li class="list-group-item">{{ sessionchat.name }}</li>
+  </ul>
+</div>
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+>
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>

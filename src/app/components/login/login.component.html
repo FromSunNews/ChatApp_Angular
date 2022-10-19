@@ -1,0 +1,76 @@
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+>
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
+<div class="outer">
+  <div class="container">
+    <div class="justify-content-md-center ">
+      <div class="panel border bg-white">
+        <img src="../../../assets/images/image.png" class="panel-img">
+
+        <div class="panel-container">
+          <div class="panel-heading">
+            <h1 class="pt-3 font-weight-bold">Login</h1>
+          </div>
+          <div class="panel-body p-3">
+            <form [formGroup]="loginForm">
+              <div class="form-group pt-3">
+                <div 
+                  class="input-field" 
+                  [class.error]="loginForm.controls['username'].dirty && loginForm.hasError('required','username')">
+                  <i class="fa fa-user p-2"></i>
+                  <input formControlName="username" type="text" placeholder="Username">
+                </div>
+              </div>
+              <small 
+              *ngIf="loginForm.controls['username'].dirty && loginForm.hasError('required','username')" 
+              class="text-danger"
+              >
+              *Username is required
+            </small>
+              <div class="form-group pt-3">
+                <div class="input-field" [class.error]="loginForm.controls['password'].dirty && loginForm.hasError('required','password')">
+                  <i class="fa fa-lock p-2"></i>
+                  <input formControlName="password" [type]="type" placeholder="Password">
+                  <span (click)="hideShowPass()" class="fa {{eyeIcon}}" aria-hidden="true"></span>
+                </div>
+              </div>
+              <small 
+              *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')"
+              class="text-danger"
+              >
+              *Password is required
+            </small>
+              <div class="form-inline fr mt-4">
+                <a id="forget" class="font-weight-bold" routerLink="/request-password">Forgot Password?</a>
+              </div>
+              <button (click)="onLogin(loginForm.value)" type="submit" class="btn btn-primary btn-lock mt-4 w-100">Login</button>
+              <div class="text-center pt-4 text-muted">Don't have account?
+                <a id="forget" routerLink="/signup">Sign Up</a>
+              </div>
+            </form>
+          </div>
+          <div class="mx-3 my-2 py-2 bordert">
+            <div class="text-center py-3">
+              <a href="https://www.facebook.com" target="_blank" class="px-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Facebook-icon-1.png/640px-Facebook-icon-1.png"/>
+              </a>
+              <a href="https://www.google.com" target="_blank" class="px-2">
+                <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png"/>
+              </a>
+              <a href="https://github.com" target="_blank" class="px-2">
+                <img src="https://www.freepnglogos.com/uploads/512x512-logo-png/512x512-logo-github-icon-35.png"/>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,124 @@
+.outer {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
+  align-items: center;
+}
+.panel-heading {
+  text-align: center;
+}
+
+#forget {
+  min-width: 100px;
+  margin-left: auto;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+.form-inline label {
+  padding-left: 10px;
+  margin: 0;
+  cursor: pointer;;
+}
+.btn{
+  margin-top:20px ;
+  border-radius: 5px;
+  background-color: #096efbd9 ;
+  
+}
+.panel {
+  display: flex;
+  align-items: center;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  justify-content: space-evenly;
+  border-radius: 5px;
+}
+.panel-img{
+  height: 300px;
+  width: 300px;
+  margin-right: 40px;
+}
+.panel-container{
+  min-height: 300px;
+  border-radius: 5px;
+}
+.input-field{
+  border-radius: 5px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  color: #096efbd9;
+  width: 350px;
+}
+.text-danger_container{
+  width: 350px
+}
+.input-field.error{
+  border: 1px solid #DC3545;
+  color: #DC3545;
+}
+input[type='text'],
+input[type='password']{
+  border: none;
+  outline: none;
+  box-shadow: none;
+  width: 100%;
+}
+.fa-eye-slash.btn {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+img{
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+}
+.bordert{
+  border-top: 1px solid #aaa;
+  position: relative;
+}
+.bordert::after{
+  content: "or connect with";
+  position: absolute;
+  top: -13px;
+  left: 33%;
+  background-color: #fff;
+  padding: 0 8px;
+}
+
+@media (max-width: 767px) { 
+  .panel{
+    flex-direction: column;
+  }
+  .panel-img{
+    display: none;
+  }
+  .input-field{
+    width: 270px;
+  }
+  .text-danger_container{
+    width: 270px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) { 
+  .input-field{
+    width: 300px;
+  }
+  .text-danger_container{
+    width: 300px;
+  }
+  .panel-img{
+    height: 250px;
+    width: 250px;
+  }
+}
